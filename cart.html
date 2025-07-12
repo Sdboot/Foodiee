@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart | Foodie</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <section class="cart-page">
+        <div class="nav">
+            <div class="logo"><h1>Food<b>ie</b></h1></div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+            </ul>
+        </div>
+        <h2>Your Cart</h2>
+        <ul id="cart-list" class="cart-list"></ul>
+        <div id="cart-total" class="cart-total"></div>
+        <button id="clear-cart-btn" class="clear-cart-btn">Clear Cart</button>
+        <button id="checkout-btn" class="checkout-btn">Checkout</button>
+    </section>
+    <footer>
+        <p>&copy; 2025 Foodie</p>
+    </footer>
+    <script>
+    // Load cart from localStorage
+    function renderCart() {
+        const cartList = document.getElementById('cart-list');
+        const cartTotal = document.getElementById('cart-total');
+        let cart = JSON.parse(localStorage.getItem('cart') || '[]');
+        cartList.innerHTML = '';
+        let total = 0;
+        if(cart.length === 0) {
+            cartList.innerHTML = '<li style="text-align:center; color:#faad96;">Your cart is empty.</li>';
+            cartTotal.textContent = '';
+        } else {
+            cart.forEach((item, idx) => {
+                const li = document.createElement('li');
+                li.innerHTML = `<span style='color:#ff511c;'>${item.name}</span> <span style='float:right;'>$${item.price.toFixed(2)} <button class='remove-cart-item' data-idx='${idx}' style='background:none; border:none; color:#faad96; font-weight:bold; cursor:pointer; margin-left:8px;' title='Remove'>&times;</button></span>`;
+                cartList.appendChild(li);
+                total += item.price;
+            });
+            cartTotal.textContent = 'Total: $' + total.toFixed(2);
+        }
+        document.querySelectorAll('.remove-cart-item').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const idx = parseInt(this.getAttribute('data-idx'));
+                cart.splice(idx, 1);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                renderCart();
+            });
+        });
+    }
+    document.getElementById('clear-cart-btn').onclick = function() {
+        localStorage.removeItem('cart');
+        renderCart();
+    };
+    document.getElementById('checkout-btn').onclick = function() {
+        alert('Checkout functionality coming soon!');
+    };
+    renderCart();
+    </script>
+</body>
+</html>

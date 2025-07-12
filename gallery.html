@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodie Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <section class="gallery-page">
+        <div class="nav">
+            <div class="logo"><h1>Food<b>ie</b></h1></div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a class="active" href="#">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="review.html">Review</a></li>
+            </ul>
+        </div>
+        <h2 class="gallery-title">Gallery</h2>
+        <div class="gallery-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="food">Food</button>
+            <button class="filter-btn" data-filter="ambience">Ambience</button>
+            <button class="filter-btn" data-filter="events">Events</button>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item food"><img src="burger.jfif" alt="Burger"><span>Burger</span></div>
+            <div class="gallery-item food"><img src="coconut rice.jfif" alt="Coconut Rice"><span>Coconut Rice</span></div>
+            <div class="gallery-item food"><img src="white rice.jfif" alt="White Rice"><span>White Rice</span></div>
+            <div class="gallery-item food"><img src="jollof rice.jfif" alt="Jollof Rice"><span>Jollof Rice</span></div>
+            <div class="gallery-item food"><img src="cripsy chicken.jfif" alt="Crispy Chicken"><span>Crispy Chicken</span></div>
+            <div class="gallery-item food"><img src="pepper soup.jfif" alt="Pepper Soup"><span>Pepper Soup</span></div>
+            <div class="gallery-item food"><img src="french fries.jfif" alt="French Fries"><span>French Fries</span></div>
+            <div class="gallery-item food"><img src="garlic bread.jpg" alt="Garlic Bread"><span>Garlic Bread</span></div>
+            <div class="gallery-item food"><img src="grilled fish.jpeg" alt="Grilled Fish"><span>Grilled Fish</span></div>
+            <div class="gallery-item food"><img src="okro soup.jfif" alt="Okro Soup"><span>Okro Soup</span></div>
+            <div class="gallery-item food"><img src="coleslaw.jfif" alt="Coleslaw"><span>Coleslaw</span></div>
+            <div class="gallery-item food"><img src="fried plantain.webp" alt="Fried Plantain"><span>Fried Plantain</span></div>
+            <div class="gallery-item food"><img src="fruit salad.jfif" alt="Fruit Salad"><span>Fruit Salad</span></div>
+            <div class="gallery-item food"><img src="cheese cake.jpg" alt="Cheese Cake"><span>Cheese Cake</span></div>
+            <div class="gallery-item food"><img src="chocolate cake.jpg" alt="Chocolate Cake"><span>Chocolate Cake</span></div>
+            <div class="gallery-item food"><img src="ice cream.jpg" alt="Ice Cream"><span>Ice Cream</span></div>
+            <div class="gallery-item food"><img src="smooties.jpg" alt="Smoothies"><span>Smoothies</span></div>
+            <div class="gallery-item food"><img src="soft drinks.jpg" alt="Soft Drinks"><span>Soft Drinks</span></div>
+            <div class="gallery-item food"><img src="fresh juice.jfif" alt="Fresh Juice"><span>Fresh Juice</span></div>
+            <div class="gallery-item food"><img src="coffee and tea.jfif" alt="Coffee and Tea"><span>Coffee and Tea</span></div>
+            <div class="gallery-item food"><img src="Spring roll.jpg" alt="Spring Roll"><span>Spring Roll</span></div>
+            <div class="gallery-item food"><img src="plantain.jfif" alt="Plantain"><span>Plantain</span></div>
+            <div class="gallery-item ambience"><img src="dining area 3.jfif" alt="Dining Area"><span>Dining Area</span></div>
+            <div class="gallery-item ambience"><img src="dining area 2.jpg" alt="Dining Area"><span>Dining Area</span></div>
+            <div class="gallery-item ambience"><img src="Dining area.jfif" alt="Dining Area"><span>Dining Area</span></div>
+            <div class="gallery-item events"><img src="celebration.jfif" alt="Customer Event"><span>Customer Event</span></div>
+            <div class="gallery-item ambience"><img src="chef at work.jfif" alt="Chef at Work"><span>Chef at Work</span></div>
+            <div class="gallery-item events"><img src="celebration.webp" alt="Celebration"><span>Celebration</span></div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 Foodie</p>
+        <div class="social-icons">
+            <a href="https://web.facebook.com/debby.ayo.98/" target="_blank" rel="noopener" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
+            <a href="https://www.instagram.com/onyinyechukwu_debbie/" target="_blank" rel="noopener" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+            <a href="https://tiktok.com/@onyinye_chukwu_1208" target="_blank" rel="noopener" aria-label="TikTok"><i class='bx bxl-tiktok'></i></a>
+            <a href="https://www.linkedin.com/in/deborah-salako-539a52258/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://www.youtube.com/@hexadeb" target="_blank" rel="noopener" aria-label="Youtube"><i class='bx bxl-youtube'></i></a>
+        </div>
+    </footer>
+<script>
+// Simple filter functionality
+const filterBtns = document.querySelectorAll('.filter-btn');
+const galleryItems = document.querySelectorAll('.gallery-item');
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelector('.filter-btn.active').classList.remove('active');
+        btn.classList.add('active');
+        const filter = btn.getAttribute('data-filter');
+        galleryItems.forEach(item => {
+            if (filter === 'all' || item.classList.contains(filter)) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });
+});
+</script>
+</body>
+</html>

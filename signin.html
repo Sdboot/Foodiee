@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In | Foodie</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <section class="signin-page">
+        <div class="nav">
+            <div class="logo"><h1>Food<b>ie</b></h1></div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+            </ul>
+        </div>
+        <h2 class="signin-title">Welcome Back!</h2>
+        <form class="signin-form">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <label for="password">Password</label>
+            <div class="password-wrapper">
+                <input type="password" id="password" name="password" required>
+                <i class='bx bx-show' id="togglePassword" style="cursor:pointer;position:absolute;right:10px;top:50%;transform:translateY(-50%);"></i>
+            </div>
+            <div class="form-options">
+                <label><input type="checkbox" name="remember"> Remember Me</label>
+                <a href="#" class="forgot-link">Forgot Password?</a>
+            </div>
+            <button type="submit">Sign In</button>
+            <p class="form-link">Don't have an account? <a href="signup.html">Sign Up</a></p>
+        </form>
+    </section>
+    <footer>
+        <p>&copy; 2025 Foodie</p>
+        <div class="social-icons">
+            <a href="https://web.facebook.com/debby.ayo.98/" target="_blank" rel="noopener" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
+            <a href="https://www.instagram.com/onyinyechukwu_debbie/" target="_blank" rel="noopener" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+            <a href="https://tiktok.com/@onyinye_chukwu_1208" target="_blank" rel="noopener" aria-label="TikTok"><i class='bx bxl-tiktok'></i></a>
+            <a href="https://www.linkedin.com/in/deborah-salako-539a52258/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://www.youtube.com/@hexadeb" target="_blank" rel="noopener" aria-label="Youtube"><i class='bx bxl-youtube'></i></a>
+        </div>
+    </footer>
+    <script>
+    // Password visibility toggle
+    const togglePassword = document.getElementById('togglePassword');
+    const passwordInput = document.getElementById('password');
+    if(togglePassword && passwordInput){
+        togglePassword.addEventListener('click', function () {
+            const type = passwordInput.type === 'password' ? 'text' : 'password';
+            passwordInput.type = type;
+            this.classList.toggle('bx-show');
+            this.classList.toggle('bx-hide');
+        });
+    }
+    </script>
+</body>
+</html>

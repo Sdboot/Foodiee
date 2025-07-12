@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodie Menu</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <section class="menu-page">
+        <div class="nav sticky-nav">
+            <div class="logo"><h1>Food<b>ie</b></h1></div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a class="active" href="#">Menu</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="review.html">Review</a></li>
+            </ul>
+            <a href="cart.html" class="cart-icon" aria-label="Cart"><i class='bx bx-cart'></i></a>
+        </div>
+        <h2 class="menu-title">Our Menu</h2>
+        <div class="menu-section">
+            <h3><i class='bx bx-leaf'></i> Starters / Appetizers</h3>
+            <ul>
+                <li>Spring Rolls <span>$8.00</span> <button class="add-to-cart-btn">Add to Cart</button></li>
+                <li>Garlic Bread <span>$5.00</span> <button class="add-to-cart-btn">Add to Cart</button></li>
+                <li>Chicken Wings <span>$10.50</span> <button class="add-to-cart-btn">Add to Cart</button></li>
+                <li>Soup of the Day <span>$8.00</span> <button class="add-to-cart-btn">Add to Cart</button></li>
+            </ul>
+        </div>
+        <div class="menu-section">
+            <h3><i class='bx bx-restaurant'></i> Main Courses</h3>
+            <ul>
+                <li>Burger (Beef/Chicken/Veggie) <span>$10.99</span> <button class="add-to-cart-btn">Add to Cart</button></li>
+                <li>Coconut Rice with Chicken or Fish <span>$16.20</span> <button class="add-to-cart-btn">Add to Cart</button></li>
+                <li>Crispy Chicken <span>$15.50</span> <button class="add-to-cart-btn">Add to Cart</button></li>
+                <li>Pepper Soup (Beef/Goat/Fish) <span>$20.00</span> <button class="add-to-cart-btn">Add to Cart</button></li>
+                <li>Spaghetti Bolognese <span>$13.00</span> <button class="add-to-cart-btn">Add to Cart</button></li>
+                <li>Grilled Fish <span>$18.00</span> <button class="add-to-cart-btn">Add to Cart</button></li>
+            </ul>
+        </div>
+        <div class="menu-section">
+            <h3><i class='bx bx-food-menu'></i> Sides</h3>
+            <ul>
+                <li>French Fries <span>$3.50</span> <button class="add-to-cart-btn">Add to Cart</button></li>
+                <li>Coleslaw <span>$2.50</span> <button class="add-to-cart-btn">Add to Cart</button></li>
+                <li>Plantains <span>$4.00</span> <button class="add-to-cart-btn">Add to Cart</button></li>
+                <li>Mixed Vegetables <span>$3.00</span> <button class="add-to-cart-btn">Add to Cart</button></li>
+            </ul>
+        </div>
+        <div class="menu-section">
+            <h3><i class='bx bx-cake'></i> Desserts</h3>
+            <ul>
+                <li>Ice Cream <span>$4.00</span> <button class="add-to-cart-btn">Add to Cart</button></li>
+                <li>Chocolate Cake <span>$5.00</span> <button class="add-to-cart-btn">Add to Cart</button></li>
+                <li>Fruit Salad <span>$3.50</span> <button class="add-to-cart-btn">Add to Cart</button></li>
+                <li>Cheesecake <span>$5.50</span> <button class="add-to-cart-btn">Add to Cart</button></li>
+            </ul>
+        </div>
+        <div class="menu-section">
+            <h3><i class='bx bx-drink'></i> Drinks</h3>
+            <ul>
+                <li>Soft Drinks <span>$2.00</span> <button class="add-to-cart-btn">Add to Cart</button></li>
+                <li>Fresh Juices <span>$3.00</span> <button class="add-to-cart-btn">Add to Cart</button></li>
+                <li>Coffee & Tea <span>$2.50</span> <button class="add-to-cart-btn">Add to Cart</button></li>
+                <li>Smoothies <span>$4.00</span> <button class="add-to-cart-btn">Add to Cart</button></li>
+            </ul>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 Foodie</p>
+    </footer>
+    <script src="index.js"></script>
+    <script>
+
+    // Animate Add to Cart button
+    document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            this.classList.add('clicked');
+            setTimeout(() => this.classList.remove('clicked'), 250);
+        });
+    });
+    // Sticky nav
+    window.addEventListener('scroll', function() {
+        const nav = document.querySelector('.sticky-nav');
+        if(window.scrollY > 0) {
+            nav.classList.add('scrolled');
+        } else {
+            nav.classList.remove('scrolled');
+        }
+    });
+    </script>
+
+</body>
+</html>
