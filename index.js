@@ -36,10 +36,13 @@ if (document.body.classList.contains('cart-page') || document.getElementById('ca
             });
         });
     }
-    document.getElementById('clear-cart-btn').onclick = function() {
-        localStorage.removeItem('cart');
-        renderCart();
-    };
+    var clearCartBtn = document.getElementById('clear-cart-btn');
+    if (clearCartBtn) {
+        clearCartBtn.onclick = function() {
+            localStorage.removeItem('cart');
+            renderCart();
+        };
+    }
     // Checkout button functionality for cart page
     if (document.getElementById('checkout-btn')) {
         document.getElementById('checkout-btn').onclick = function() {
@@ -73,10 +76,32 @@ document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
         setTimeout(() => this.classList.remove('clicked'), 250);
     });
 });
-const hamburger = document.getElementById('hamburger-menu');
-const navUl = document.querySelector('.nav ul');
-if(hamburger && navUl) hamburger.addEventListener('click', () => {
-    navUl.classList.toggle('active');
+
+// Hamburger menu functionality for mobile navigation with accessibility and keyboard support
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav ul');
+    if (hamburger && navMenu) {
+        // Toggle menu on click
+        hamburger.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+        // Toggle menu on Enter or Space key
+        hamburger.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                navMenu.classList.toggle('active');
+            }
+        });
+        // Close menu when a nav link is clicked (mobile UX)
+        navMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                if (window.innerWidth <= 800) {
+                    navMenu.classList.remove('active');
+                }
+            });
+        });
+    }
 });
 
 
