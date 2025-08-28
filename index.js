@@ -7,7 +7,8 @@ setInterval(() => {
 }, 4000);
 
 let cart = [];
-// Cart page logic
+
+
 if (document.body.classList.contains('cart-page') || document.getElementById('cart-list')) {
     function renderCart() {
         const cartList = document.getElementById('cart-list');
@@ -43,7 +44,8 @@ if (document.body.classList.contains('cart-page') || document.getElementById('ca
             renderCart();
         };
     }
-    // Checkout button functionality for cart page
+    
+
     if (document.getElementById('checkout-btn')) {
         document.getElementById('checkout-btn').onclick = function() {
             let cart = JSON.parse(localStorage.getItem('cart') || '[]');
@@ -77,12 +79,12 @@ document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
     });
 });
 
-// Hamburger menu functionality for mobile navigation with accessibility and keyboard support
+
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('.nav ul');
     if (hamburger && navMenu) {
-        // Toggle menu on click
+        
         hamburger.addEventListener('click', function() {
             navMenu.classList.toggle('active');
         });
@@ -351,7 +353,7 @@ if (document.querySelector('.tracking-page')) {
             li.textContent = `${item.name} - $${item.price.toFixed(2)}`;
             itemsUl.appendChild(li);
         });
-        // Progress bar logic
+    
         const steps = [
             { id: 'step-placed', msg: "Your order has been placed! We'll keep you updated." },
             { id: 'step-preparing', msg: 'Your food is being prepared by our chef.' },

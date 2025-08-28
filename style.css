@@ -15,6 +15,15 @@ body{
     justify-content: space-between;
     align-items: center;
     padding: 30px 0;
+    gap: 10px;
+}
+
+.nav ul {
+    flex: 1;
+}
+
+.nav .hamburger {
+    margin-left: auto;
 }
 
 .nav .logo h1{
@@ -104,7 +113,7 @@ input{
 }
 
 .content .content-left .info p{
-    font-size: 23px;
+    font-size: 20px;
     line-height: 2pc;
     margin-bottom: 30px;
     font-family: sans-serif;
@@ -156,6 +165,7 @@ input{
     width: 90%;
     position: relative;
     margin-top: 50px;
+
     
 }
 
@@ -304,17 +314,123 @@ input{
     border-bottom: none;
 }
 @media (max-width: 600px) {
-    .menu-page {
-        padding: 15px 5px;
+    body {
+        margin: 0 2vw;
     }
-    .menu-title {
-        font-size: 2rem;
+    .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 0;
+        gap: 8px;
     }
-    .menu-section h3 {
+    .nav .logo h1 {
+        font-size: 1.5rem;
+    }
+    .nav ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 0 0 10px 0;
+    }
+    .nav ul li {
+        margin: 8px 0;
+    }
+    .content {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        margin-top: 20px;
+        align-items: center;
+        justify-content: center;
+    }
+    .content .content-left, .content .content-right {
+        width: 50%;
+        min-width: 0;
+    }
+    .content .content-left {
+        padding: 0 4vw 0 0;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    }
+    .content .content-left .info h2 {
+        font-size: 0.8rem !important;
+        margin-bottom: 0;
+    }
+    .content .content-left .info p {
+        font-size: 0.6rem;
+        margin-bottom:0;
+
+    }
+    .content .content-left button {
+        width: 80%;
+        font-size: 0.9rem;
+        padding: 10px 0;
+    }
+    .content .content-right img {
+        width: 90%;
+        max-width: 120px;
+        border-radius: 50%;
+        margin: 0 auto;
+        display: block;
+    }
+    .category {
+        margin-bottom: 20px;
+    }
+    .category .list-items {
+        margin-top: 20px;
+    }
+    .category .list-items h3 {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+    }
+    .category .list-items .card-list {
+        grid-template-columns: 1fr ;
+        gap: 18px;
+    }
+    .category .card-list .card {
+        width: 60vw;
+        max-width: 320px;
+        margin: 0 auto;
+        padding: 10px 6px;
+    }
+    .category .card-list .card img {
+        height: 90px;
+        width: 120px;
+        object-fit: cover;
+    }
+    .category .card-list .card .food-title {
+        padding: 18px 0 8px;
+    }
+    .category .card-list .card .food-title h1 {
         font-size: 1.1rem;
     }
-    .menu-section ul li {
+    .category .card .desc-food p {
+        font-size: 0.95rem;
+        margin-bottom: 10px;
+    }
+    .category .card .price span {
         font-size: 1rem;
+    }
+    footer {
+        font-size: 0.95rem;
+        padding: 10px 0 0 0;
+        text-align: center;
+    }
+    .social-icons {
+        margin-top: 6px;
+    }
+    .social-icons a {
+        font-size: 1.3rem;
+        margin: 0 4px;
+    }
+    .menu-title {
+        font-size: 1.5rem;
+    }
+    .menu-section h3 {
+        font-size: 1rem;
+    }
+    .menu-section ul li {
+        font-size: 0.95rem;
     }
 }
 
@@ -467,10 +583,10 @@ body {
         background: #fff8f3;
         position: absolute;
         top: 100%;
-        left: 0;
+        right: 0;
         width: 100vw;
         box-shadow: 0 4px 24px #faad96;
-        padding: 20px 0;
+        padding: 20px 70px;
         z-index: 3001;
     }
     .nav ul.active {
@@ -480,6 +596,7 @@ body {
         display: flex;
         z-index: 3002;
         pointer-events: auto;
+        margin-left: 100px;
     }
 }
 
@@ -575,10 +692,25 @@ body {
         padding: 15px 5px;
     }
     .gallery-title {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
     .gallery-item img {
         height: 120px;
+        width:130px ;
+    }
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        align-items: center;
+    }
+    .gallery-item img {
+        width: 100%;
+        max-width: 100%;
+        height: 110px;
+        object-fit: cover;
+        display: block;
+        margin: 0 auto;
     }
 }
 
@@ -645,7 +777,7 @@ body {
 }
 @media (max-width: 600px) {
     .contact-page {
-        padding: 15px 5px;
+        padding: 15px 5px 50px 5px;
     }
     .contact-title {
         font-size: 1.5rem;
@@ -757,8 +889,42 @@ body {
         padding: 15px 5px;
     }
     .about-hero h2 {
-        font-size: 2rem;
+        font-size: 1.4rem;
     }
+    .about-story h3{
+        font-size: 1rem !important;
+    }
+    .about-story p{
+        font-size: 0.8rem;
+    }
+    .about-mission h3{
+        font-size: 1rem !important;
+    }
+    .about-mission p{
+        font-size: 0.8rem;
+    }
+    .about-unique h3{
+        font-size: 1rem !important;
+    }
+    .about-unique li{
+        font-size: 0.8rem;
+    }
+    .about-unique b{
+        font-size: 1rem;
+    }
+    .about-values h3{
+        font-size: 1rem !important;
+    }
+    .about-values p{
+        font-size: 0.8rem;
+    }
+    .about-cta h3{
+        font-size: 1rem !important;
+    }
+    .about-cta p{
+        font-size: 0.8rem;
+    }
+
     .team-grid {
         flex-direction: column;
         align-items: center;
