@@ -317,14 +317,17 @@ input{
     body {
         margin: 0 2vw;
     }
+    
     .nav {
         flex-direction: column;
         align-items: flex-start;
         padding: 10px 0;
         gap: 8px;
+        
     }
     .nav .logo h1 {
         font-size: 1.5rem;
+       
     }
     .nav ul {
         flex-direction: column;
@@ -348,9 +351,9 @@ input{
     }
     .content .content-left {
         padding: 0 4vw 0 0;
-        background: #fff;
+        
         border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+        
     }
     .content .content-left .info h2 {
         font-size: 0.8rem !important;
@@ -377,10 +380,10 @@ input{
         margin-bottom: 20px;
     }
     .category .list-items {
-        margin-top: 20px;
+        margin-top: 100px;
     }
     .category .list-items h3 {
-        font-size: 1.1rem;
+        font-size: 1.4rem;
         margin-bottom: 30px;
     }
     .category .list-items .card-list {
@@ -597,6 +600,7 @@ body {
         z-index: 3002;
         pointer-events: auto;
         margin-left: 100px;
+        margin-bottom: 0 !important;
     }
 }
 
