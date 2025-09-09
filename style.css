@@ -323,11 +323,12 @@ input{
         align-items: flex-start;
         padding: 10px 0;
         gap: 8px;
+        background-color: #ffeae0 !important;
         
     }
+
     .nav .logo h1 {
         font-size: 1.5rem;
-       
     }
     .nav ul {
         flex-direction: column;
